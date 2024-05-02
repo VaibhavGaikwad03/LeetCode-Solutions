@@ -1,28 +1,34 @@
 class Solution
 {
 public:
-    string longestPalindrome(string s)
+    int lengthOfLongestSubstring(string s)
     {
-        int st = 0, n = s.length(), max_len = 1;
-        for (int i = 0; i < n; i++)
+        int i, j, len = s.length();
+        int freq;
+        vector<int> substr_lengths;
+        int map[128] = {0};
+
+        if (len == 0)
+            return 0;
+
+        if (len == 1)
+            return 1;
+
+        for (i = 0; i < len - 1; i++)
         {
-            int l = i, r = i;
-            while (r < n - 1 && s[r] == s[r + 1])
+            freq = 0;
+            for (j = i; j < len; j++)
             {
-                r++;
+                if (map[s[j]] > 0)
+                {
+                    fill_n(map, 128, 0);
+                    break;
+                }
+                map[s[j]]++;
+                freq++;
             }
-            i = r;
-            while (l > 0 && r < n - 1 && s[l - 1] == s[r + 1])
-            {
-                l--;
-                r++;
-            }
-            if (max_len < r - l + 1)
-            {
-                st = l;
-                max_len = r - l + 1;
-            }
+            substr_lengths.push_back(freq);
         }
-        return s.substr(st, max_len);
+        return *(max_element(substr_lengths.begin(), substr_lengths.end()));
     }
 };
