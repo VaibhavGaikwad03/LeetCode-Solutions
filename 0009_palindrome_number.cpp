@@ -8,7 +8,7 @@ public:
         {
             return false;
         }
-
+ 
         temp = x;
 
         while (x != 0)
