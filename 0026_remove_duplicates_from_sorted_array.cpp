@@ -5,8 +5,7 @@ public:
     {  
         vector<int> unique; 
 
-        for (int i = 0; i < nums.size(); i++) 
-        { 
+        for (int i = 0; i < nums.size(); i++)  
             if (i == 0)
                 unique.push_back(nums[i]);
 
