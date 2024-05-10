@@ -2,7 +2,7 @@ class Solution
 {
 public:
     int removeDuplicates(vector<int> &nums)
-    {
+    { 
         vector<int> unique; 
 
         for (int i = 0; i < nums.size(); i++) 
