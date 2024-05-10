@@ -1,6 +1,6 @@
 class Solution
 {
-public:
+public: 
     int removeDuplicates(vector<int> &nums) 
     {  
         vector<int> unique; 
