@@ -1,6 +1,6 @@
 class Solution
 { 
-public:
+public: 
     int searchInsert(vector<int> &nums, int target)
     {
         int i;
